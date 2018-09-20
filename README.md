@@ -1,2 +1,2 @@
 # controlo_parque
-Software em PHP e HTML para controlo de autocarros.
+Software para controlo de autocarros em PHP e HTML.
