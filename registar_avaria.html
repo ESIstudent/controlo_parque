@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<title>Programa Controlo de Parque</title>
+<meta http-equiv="Content-Type" content="text/html" charset="UTF-8"/>
+
+<style>
+body { background-color:rgba(0,0,255,0.3); }
+
+div.interface { 
+background-color:LightGray;
+width:550px;
+height:450px;
+}
+
+button.interface {
+width:200px;
+height:50px
+}
+
+div.elementos_interface { style="display:" }
+
+</style>
+
+</head>
+
+<body align="center">
+
+<div align="center">
+
+<div class="interface" align="center">
+
+<table cellpadding="5px" width="100%" height="425px">
+<tr style="background-color:gray;"><td align="center" colspan=2 height="64px"><p style="font-size:20px">Controlo de Parque</p></td><tr><tr>
+<tr><td colspan="2" style="text-decoration-line:underline" height="20px"><l><b>Registar Avaria</b></l></td></tr>
+<tr>
+<td align="center">Hora</td>
+<td align="left">
+<table><tr><td id="hora"></td><td id="min"></td></tr></table>
+</td>
+</tr>
+<tr>
+<td align="center">Data</td>
+<td align="left"><table><tr><td id="dia"></td><td id="mes"></td><td id="ano"></td></tr></table></td>
+</tr>
+<tr>
+<td align="center">Nº Autocarro</td>
+<td align="left"><input id="inputNumeroAutocarro" name="numeroAutocarro" type="number" min="1" width="50px"></td>
+</tr>
+<tr>
+<td align="center">Nº Motorista</td>
+<td align="left"><input id="inputNumeroMotorista" name="numeroMotorista" type="number" min="1"></td>
+</tr>
+<tr>
+<td align="center" valign="top">Lista Avarias</td>
+<td align="left">
+<div style="overflow:scroll; background-color:white; width:300px; height:120px">
+<p>Mecânica:</p>
+<input id="checkboxNumeroAvaria0" name="numeroAvaria" type="checkbox">0</input><br>
+<input id="checkboxNumeroAvaria1" name="numeroAvaria1" type="checkbox">1 - Ralenti</input><br>
+<input id="checkboxNumeroAvaria2" name="numeroAvaria2" type="checkbox">2 - Compressor não carrega</input><br>
+<input id="checkboxNumeroAvaria3" name="numeroAvaria3" type="checkbox">3 - Puxa mal</input><br>
+<input id="checkboxNumeroAvaria4" name="numeroAvaria4" type="checkbox">4 - Aquecimento do motor</input><br>
+<input id="checkboxNumeroAvaria5" name="numeroAvaria5" type="checkbox">5 - Pancada no motor</input><br>
+<input id="checkboxNumeroAvaria6" name="numeroAvaria6" type="checkbox">6 - Fumo anormal</input><br>
+<input id="checkboxNumeroAvaria7" name="numeroAvaria7" type="checkbox">7 - Fuga de gasóleo</input><br>
+<input id="checkboxNumeroAvaria8" name="numeroAvaria8" type="checkbox">8 - Perde água</input><br>
+<input id="checkboxNumeroAvaria9" name="numeroAvaria9" type="checkbox">9 - Perde óleo</input><br>
+<input id="checkboxNumeroAvaria10" name="numeroAvaria10" type="checkbox">10 - Perde ar</input><br>
+<input id="checkboxNumeroAvaria11" name="numeroAvaria11" type="checkbox">11 - Ruído</input><br>
+<input id="checkboxNumeroAvaria12" name="numeroAvaria12" type="checkbox">12 - Travão de pé</input><br>
+<input id="checkboxNumeroAvaria13" name="numeroAvaria13" type="checkbox">13 - Travão de mão</input><br>
+<input id="checkboxNumeroAvaria14" name="numeroAvaria14" type="checkbox">14 - Embraeagem</input><br>
+<input id="checkboxNumeroAvaria15" name="numeroAvaria15" type="checkbox">15 - Direcção</input><br>
+<input id="checkboxNumeroAvaria16" name="numeroAvaria16" type="checkbox">16 - Suspensão</input><br>
+<input id="checkboxNumeroAvaria17" name="numeroAvaria17" type="checkbox">17 - Molas</input><br>
+<input id="checkboxNumeroAvaria18" name="numeroAvaria18" type="checkbox">18 - Pneus</input><br>
+<input id="checkboxNumeroAvaria19" name="numeroAvaria19" type="checkbox">19 - Velocidades</input><br>
+<input id="checkboxNumeroAvaria20" name="numeroAvaria20" type="checkbox">20 - Acelerador</input><br>
+<input id="checkboxNumeroAvaria21" name="numeroAvaria21" type="checkbox">21 - Para-brisas</input><br>
+<p>Carroçaria:</p>
+<input id="checkboxNumeroAvaria22" name="numeroAvaria22" type="checkbox">22 - Espelhos</input><br>
+<input id="checkboxNumeroAvaria23" name="numeroAvaria23" type="checkbox">23 - Cadeiras</input><br>
+<input id="checkboxNumeroAvaria24" name="numeroAvaria24" type="checkbox">24 - Janelas</input><br>
+<input id="checkboxNumeroAvaria25" name="numeroAvaria25" type="checkbox">25 - Portas</input><br>
+<input id="checkboxNumeroAvaria26" name="numeroAvaria26" type="checkbox">26 - Lavagem/limpeza</input><br>
+<p>Diversos:</p>
+<input id="checkboxNumeroAvaria27" name="numeroAvaria27" type="checkbox">27 - Carteira documentos</input><br>
+<input id="checkboxNumeroAvaria28" name="numeroAvaria28" type="checkbox">28 - Sinal (pré-sinalização)</input><br>
+<input id="checkboxNumeroAvaria29" name="numeroAvaria29" type="checkbox">29 - Extintor</input><br>
+<input id="checkboxNumeroAvaria30" name="numeroAvaria30" type="checkbox">30 - Manutenção/Inspecção</input><br>
+<p>Equipamento Eléctrico:</p>
+<input id="checkboxNumeroAvaria31" name="numeroAvaria31" type="checkbox">31 - Motor de arranque</input><br>
+<input id="checkboxNumeroAvaria32" name="numeroAvaria32" type="checkbox">32 - Luses avisadoras</input><br>
+<input id="checkboxNumeroAvaria33" name="numeroAvaria33" type="checkbox">33 - Baterias</input><br>
+<input id="checkboxNumeroAvaria34" name="numeroAvaria34" type="checkbox">34 - Alternador</input><br>
+<input id="checkboxNumeroAvaria35" name="numeroAvaria35" type="checkbox">35 - Indicador de temperatura</input><br>
+<input id="checkboxNumeroAvaria36" name="numeroAvaria36" type="checkbox">36 - Indicador de nível de água</input><br>
+<input id="checkboxNumeroAvaria37" name="numeroAvaria37" type="checkbox">37 - Conta Kms.</input><br>
+<input id="checkboxNumeroAvaria38" name="numeroAvaria38" type="checkbox">38 - Manómetro pressão de ar</input><br>
+<input id="checkboxNumeroAvaria39" name="numeroAvaria39" type="checkbox">39 - Manómetro pressão de óleo</input><br>
+<input id="checkboxNumeroAvaria40" name="numeroAvaria40" type="checkbox">40 - Campanhia</input><br>
+<input id="checkboxNumeroAvaria41" name="numeroAvaria41" type="checkbox">41 - Pisca-Pisca</input><br>
+<input id="checkboxNumeroAvaria42" name="numeroAvaria42" type="checkbox">42 - Iluminação interior</input><br>
+<input id="checkboxNumeroAvaria43" name="numeroAvaria43" type="checkbox">43 - Iluminação exterior</input><br>
+<input id="checkboxNumeroAvaria44" name="numeroAvaria44" type="checkbox">44 - Stop.</input><br>
+<input id="checkboxNumeroAvaria45" name="numeroAvaria45" type="checkbox">45 - Busina</input><br>
+<input id="checkboxNumeroAvaria46" name="numeroAvaria46" type="checkbox">46 - Limpa parabrisas</input><br>
+<p>Acidentes:</p>
+<input id="checkboxNumeroAvaria47" name="numeroAvaria47" type="checkbox">47 - Choque c/ veículo 3.º</input><br>
+<input id="checkboxNumeroAvaria48" name="numeroAvaria48" type="checkbox">48 - Choque c/ veículo «Transcor»</input><br>
+<input id="checkboxNumeroAvaria49" name="numeroAvaria49" type="checkbox">49 - Choque c/ imóveis</input><br>
+<input id="checkboxNumeroAvaria50" name="numeroAvaria50" type="checkbox">50 - Atropelamento</input><br>
+<input id="checkboxNumeroAvaria51" name="numeroAvaria51" type="checkbox">51 - Queda</input><br>
+<input id="checkboxNumeroAvaria52" name="numeroAvaria52" type="checkbox">52 - Riscos/amolgad. carroçaria</input><br>
+</div>
+
+</td>
+</tr>
+<tr><td align="center" colspan="2" ><a href="inicio.html"><button>OK</button></a> <a href="inicio.html"><button>Cancelar</button></a></td></tr>
+</table>
+
+<div style="position:inline; bottom:0px;" display:block; align="right">
+<a href="inicio.html"><button>Pagina Inicial</button></a>
+<button>Sair</button>
+</div>
+
+</div>
+</div>
+
+<script>
+var d = new Date();
+var e;
+var x;
+
+document.getElementById("hora").innerHTML = d.getHours()+":";
+document.getElementById("min").innerHTML = d.getMinutes();
+document.getElementById("dia").innerHTML = d.getDate()+"/";
+e = d.getMonth();
+e = e + 1;
+document.getElementById("mes").innerHTML = e+"/";
+document.getElementById("ano").innerHTML = d.getFullYear();
+</script>
+
+</body>
+
+
+</html>
